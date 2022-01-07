@@ -31,7 +31,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/" aria-current="page" (click)="OturumKapat()" >CIKIS YAP</a>
+          <a class="nav-link" href="/" aria-current="page"*ngIf="OturumKontrol()==true" (click)="OturumKapat()" >CIKIS YAP</a>
         </li>
       </ul>
     </div>
