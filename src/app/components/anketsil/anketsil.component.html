@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+
+      <button class="btn btn-outline-primary" [routerLink]="['/anketler']">Anketleri Listele</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="card mt-3">
+        <div class="card-header bg-danger text-white">
+          <h4>Anket Sil</h4>
+        </div>
+        <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div [innerHTML]="secAnket.soru.soru1"></div>
+                <div [innerHTML]="secAnket.soru.soru2"></div>
+                <div [innerHTML]="secAnket.soru.soru3"></div>
+                <div [innerHTML]="secAnket.soru.soru4"></div>
+                <div [innerHTML]="secAnket.soru.soru5"></div>
+              </div>
+              <div class="card-footer text-muted">
+                <h4>Sorular</h4>
+              </div>
+            </div>
+            
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div [innerHTML]="secAnket.cevap.cevap1"></div>
+                <div [innerHTML]="secAnket.cevap.cevap2"></div>
+                <div [innerHTML]="secAnket.cevap.cevap3"></div>
+                <div [innerHTML]="secAnket.cevap.cevap4"></div>
+                <div [innerHTML]="secAnket.cevap.cevap5"></div>
+              </div>
+              <div class="card-footer text-muted"><h4>Cevaplar</h4></div>
+            </div>
+          </div>
+        </div>
+          
+        </div>
+        <div class="card-footer">
+          <h4>Anket Silinecektir Onaylıyor musunuz?</h4>
+          <button class="btn btn-outline-danger"  (click)="Sil()" (click)="ToastSuccess()">Sil</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

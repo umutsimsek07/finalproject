@@ -1,0 +1,88 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-outline-primary mx-2" [routerLink]="['/anketler']">Anketleri Listele</button>
+      <span class="badge badge-pill bg-success text-white" *ngIf="secAnket.islem">Cevaplandı</span>
+      <span class="badge badge-pill bg-danger text-white" *ngIf="!secAnket.islem">Bekliyor</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <form #frm="ngForm" (ngSubmit)="Kaydet()" (ngSubmit)="Vazgec()">
+        <div class="card mt-3">
+          <div class="card-header">
+            <h4>Ankete Soru Ekle - Düzenle</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Başlık</label>
+              <input type="text" name="baslik" class="form-control" [(ngModel)]="secAnket.baslik" required>
+            </div>
+            <div class="form-group">
+              <label>Soru1</label>
+              <textarea name="soru1" rows="2" class="form-control" [(ngModel)]="secAnket.soru.soru1"></textarea>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru1.length>1">
+              <label>Soru2</label>
+              <textarea name="soru2" rows="2" class="form-control" [(ngModel)]="secAnket.soru.soru2"></textarea>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru2.length>1">
+              <label>Soru3</label>
+              <textarea name="soru3" rows="2" class="form-control" [(ngModel)]="secAnket.soru.soru3"></textarea>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru3.length>1">
+              <label>Soru4</label>
+              <textarea name="soru4" rows="2" class="form-control" [(ngModel)]="secAnket.soru.soru4"></textarea>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru4.length>1">
+              <label>Soru5</label>
+              <textarea name="soru5" rows="2" class="form-control" [(ngModel)]="secAnket.soru.soru5"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid gap-2 mt-3 mb-5 col-6 mx-auto">
+          <input type="submit" value="Vazgec" class="btn btn-dark">
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <form #frm="ngForm" (ngSubmit)="Kaydet()">
+        <div class="card mt-3">
+          <div class="card-header">
+            <h4>Ankete Cevap Ekle - Düzenle</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Başlık</label>
+              <input type="text" name="baslik" class="form-control" [(ngModel)]="secAnket.baslik" required>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru1.length>1">
+              <label>Cevap1</label>
+              <textarea name="cevap1" rows="2" class="form-control" [(ngModel)]="secAnket.cevap.cevap1"></textarea>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru2.length>1">
+              <label>Cevap2</label>
+              <textarea name="cevap2" rows="2" class="form-control" [(ngModel)]="secAnket.cevap.cevap2"></textarea>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru3.length>1">
+              <label>Cevap3</label>
+              <textarea name="cevap3" rows="2" class="form-control" [(ngModel)]="secAnket.cevap.cevap3"></textarea>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru4.length>1">
+              <label>Cevap4</label>
+              <textarea name="cevap4" rows="2" class="form-control" [(ngModel)]="secAnket.cevap.cevap4"></textarea>
+            </div>
+            <div class="form-group" *ngIf="secAnket.soru.soru5.length>1">
+              <label>Cevap5</label>
+              <textarea name="cevap5" rows="2" class="form-control" [(ngModel)]="secAnket.cevap.cevap5"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid gap-2 mt-3 mb-5 col-6 mx-auto">
+          <input type="submit" value="Kaydet" class="btn btn-success" (click)="TamamlaIptal(secAnket,true)" (click)="ToastSuccess()"
+            [disabled]="frm.invalid">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

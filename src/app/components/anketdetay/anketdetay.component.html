@@ -1,0 +1,153 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      Merhaba <b>{{adsoyad}}</b> <br>
+      <button class="btn btn-outline-primary mt-2" [routerLink]="['/anketler']">Anketleri Listele</button>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="display-4 mt-2">{{secAnket.baslik}}</h1>
+    <div class="col-md-6">
+
+      <div class="card mt-3" *ngIf="secAnket.soru.soru1.length>1">
+        <div class="card-header">
+          <h4>Soru 1</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.soru.soru1"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+
+      <div class="card mt-3" *ngIf="secAnket.soru.soru2.length>1">
+        <div class="card-header">
+          <h4>Soru 2</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.soru.soru2"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi :</b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+
+      <div class="card mt-3" *ngIf="secAnket.soru.soru3.length>1">
+        <div class="card-header">
+          <h4>Soru 3</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.soru.soru3"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+
+      <div class="card mt-3" *ngIf="secAnket.soru.soru4.length>1">
+        <div class="card-header">
+          <h4>Soru 4</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.soru.soru4"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+
+      <div class="card mt-3" *ngIf="secAnket.soru.soru5.length>1">
+        <div class="card-header">
+          <h4>Soru 5</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.soru.soru5"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+
+      <div class="card mt-3" *ngIf="secAnket.cevap.cevap1.length>1">
+        <div class="card-header">
+          <h4>Cevap 1</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.cevap.cevap1"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+      <div class="card mt-3" *ngIf="secAnket.cevap.cevap2.length>1">
+        <div class="card-header">
+          <h4>Cevap 2</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.cevap.cevap2"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+      <div class="card mt-3" *ngIf="secAnket.cevap.cevap3.length>1">
+        <div class="card-header">
+          <h4>Cevap 3</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.cevap.cevap3"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+      <div class="card mt-3" *ngIf="secAnket.cevap.cevap4.length>1">
+        <div class="card-header">
+          <h4>Cevap 4</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.cevap.cevap4"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+      <div class="card mt-3" *ngIf="secAnket.cevap.cevap5.length>1">
+        <div class="card-header">
+          <h4>Cevap 5</h4>
+        </div>
+        <div class="card-body">
+          <div [innerHTML]="secAnket.cevap.cevap5"></div>
+        </div>
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b>{{secAnket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Düzenlenme Tarihi : </b>{{secAnket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}} <br>
+          <b>Ekleyen : </b>{{adsoyad}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

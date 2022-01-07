@@ -1,0 +1,41 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-12">
+      Merhaba <b>{{adsoyad}}</b> <br>
+      <button class="btn btn-outline-primary my-3" [routerLink]="['/anketekle']">Anket Ekle</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mt-3" *ngFor="let anket of anketler">
+        <div class="card-header">
+          <h4>{{anket.baslik}}</h4>
+          <div style="float: right;">
+            <span class="badge badge-pill bg-success text-white" *ngIf="anket.islem">Cevaplandı</span>
+            <span class="badge badge-pill bg-danger text-white" *ngIf="!anket.islem">Bekliyor</span>
+            <button class="mx-2 btn btn-outline-info btn-sm" [routerLink]="['/anketdetay',anket.key]">Detay</button>
+            <button class="mx-2 btn btn-outline-dark btn-sm"[routerLink]="['/anketduzenle',anket.key]" >Cevapla-Düzenle</button>
+            <button class="mx-2 btn btn-outline-danger btn-sm" [routerLink]="['/anketsil',anket.key]">Sil</button>
+          </div>
+        </div>
+
+        <div class="card-body" >
+          <h5>Sorular</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngIf="anket.soru.soru1.length>1">{{anket.soru.soru1}}</li><br>
+            <li class="list-group-item" *ngIf="anket.soru.soru2.length>1">{{anket.soru.soru2}}</li><br>
+            <li class="list-group-item" *ngIf="anket.soru.soru3.length>1">{{anket.soru.soru3}}</li><br>
+            <li class="list-group-item" *ngIf="anket.soru.soru4.length>1">{{anket.soru.soru4}}</li><br>
+            <li class="list-group-item" *ngIf="anket.soru.soru5.length>1">{{anket.soru.soru5}}</li><br>
+          </ul>
+        </div>
+        
+        <div class="card-footer text-muted">
+          <b>Eklenme Tarihi : </b> {{anket.kayTarih | date:'dd.MM.yyyy HH:mm:ss'}}
+          <b>Düzenleme Tarihi : </b> {{anket.duzTarih | date:'dd.MM.yyyy HH:mm:ss'}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

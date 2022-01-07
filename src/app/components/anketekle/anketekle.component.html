@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      Merhaba <b>{{adsoyad}}</b> <br>
+      <button class="btn btn-outline-primary my-3" [routerLink]="['/anketler']">Anketler</button>
+    </div>
+    <div class="row">
+      <div class="col-md-12 p-2 mb-3 card">
+        <h4>Anket Ekle</h4>
+        <hr>
+        <form #frm="ngForm" (ngSubmit)="Kaydet()">
+          <div class="form-group ">
+            <label>BASLIK</label>
+            <input type="text" class="form-control my-2 " name="baslik" [(ngModel)]="secAnket.baslik" required>
+          </div>
+          <div class="form-group">
+            <label>SORU 1</label>
+            <textarea name="soru" rows="2" class="form-control my-2 " [(ngModel)]="secAnket.soru.soru1">
+            </textarea>
+          
+          </div>
+          <div class="form-group my-2 mx-2">
+            <input type="submit" value="Kaydet" class="btn btn-outline-success" [disabled]="frm.invalid" >
+          </div>
+        </form>
+        <div class="mt-2" [ngClass]="sonuc.islem ? 'alert alert-success':'alert alert-danger'"
+          *ngIf="sonuc.mesaj?.length>0">{{sonuc.mesaj}}</div>
+      </div>
+  </div>
+</div>

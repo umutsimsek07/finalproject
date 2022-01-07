@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Admin</th>
+            <th>Adsoyad</th>
+            <th>Mail</th>
+            <th>Düzenle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let uye of uyeler">
+            <td>
+              <!-- <span *ngIf="uye.admin=='2'">SuperVizor</span> -->
+              <span *ngIf="uye.admin=='1'">Admin</span>
+              <span *ngIf="uye.admin=='0'">Üye</span>
+            </td>
+            <td>{{uye.adsoyad}}</td>
+            <td>{{uye.mail}}</td>
+
+            <td ><button class="btn btn-warning btn-sm"
+              (click)="UyeSec(uye)" >Düzenle</button></td>
+
+            <td ><button class="btn btn-danger btn-sm"
+              (click)="UyeSil(uye)" *ngIf="uye.admin=='0'">Sil</button></td>
+          </tr>  
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4" >
+      <h2>Kullanıcı Düzenle</h2>
+      <form #uyeForm="ngForm" (ngSubmit)="Duzenle()">
+        <div class="form-group" *ngIf="secUye.admin=='1'">
+          <label><h3>Admin mi</h3></label>
+          <select name="admin" class="form-control" #admin ngModel [(ngModel)]="secUye.admin" required >
+            <option value="0">Hayır</option>
+            <option value="1">Evet</option>
+        </select>
+        </div>
+        <div class="form-group">
+          <label><h3>Ad Soyad</h3></label>
+          <input type="text" name="adsoyad" class="form-control" #adsoyad ngModel [(ngModel)]="secUye.adsoyad" required>
+        </div>
+        <div class="form-group">
+          <label><h3>Mail</h3></label>
+          <input type="string" name="mail" class="form-control" #mail ngModel [(ngModel)]="secUye.mail" required>
+        </div>
+        <input type="submit" value="Duzenle" class="btn btn-success my-2" [disabled]="uyeForm.invalid" *ngIf="secUye.admin!='0'">
+            <button class="btn btn-danger mx-2"  (click)="Vazgec()">Vazgeç</button>
+      </form>
+    </div>
+  </div>
+</div>
