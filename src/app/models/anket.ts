@@ -1,6 +1,6 @@
 export class Anket {
     key: string;
-    baslik: [];
+    baslik: string;
     soru = {
         soru1: " ",
         soru2: " ",
